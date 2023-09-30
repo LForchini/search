@@ -19,6 +19,10 @@ fn main() -> Result<(), TermsError> {
     let content = page.get_content()?;
     let content = content.split('\n').next().ok_or(TermsError::ParseError)?;
 
+    if content.ends_with("may refer to:") {
+        return Err(TermsError::Ambiguous);
+    }
+
     println!("{}", content);
 
     Ok(())
@@ -31,6 +35,9 @@ enum TermsError {
 
     #[error("Could not parse article")]
     ParseError,
+
+    #[error("Could not disambiguate")]
+    Ambiguous,
 }
 
 impl From<wikipedia::Error> for TermsError {
