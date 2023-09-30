@@ -1,6 +1,6 @@
 [package]
 name = "search-rs"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Leonardo Forchini <git@lforchini.com>"]
 edition = "2021"
 license = "MIT"
@@ -18,3 +18,5 @@ name = "search"
 [dependencies]
 anyhow = "1.0.75"
 clap = { version = "4.4.6", features = ["derive", "env"] }
+thiserror = "1.0.49"
+wikipedia = "0.3.4"
