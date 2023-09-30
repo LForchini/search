@@ -1,0 +1,20 @@
+[package]
+name = "search-rs"
+version = "0.1.1"
+authors = ["Leonardo Forchini <git@lforchini.com>"]
+edition = "2021"
+license = "MIT"
+
+readme = "README.md"
+description = "A CLI tool that opens firefox"
+repository = "https://github.com/LForchini/search-rs.git"
+
+
+[[bin]]
+name = "search"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.75"
+clap = { version = "4.4.6", features = ["derive", "env"] }
